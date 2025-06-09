@@ -1,5 +1,5 @@
 
-baseURL = 'https://sherlockramos.blog'
+baseURL = 'https://prof-gabrielramos.github.io/sherlockramosblog'
 languageCode = 'pt-br'
 title = 'Sherlock Ramos Blog'
 theme = "PaperMod"
