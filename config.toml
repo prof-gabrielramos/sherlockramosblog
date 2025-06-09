@@ -1,8 +1,36 @@
-
 baseURL = 'https://prof-gabrielramos.github.io/sherlockramosblog'
 languageCode = 'pt-br'
 title = 'Sherlock Ramos Blog'
 theme = "PaperMod"
+
+# Build
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+paginate = 10
+
+# Analytics e SEO
+googleAnalytics = "" # Deixar vazio desativa o Google Analytics
+
+# Otimizações de build
+[build]
+  writeStats = true
+  noJSConfigInAssets = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "github"
+  [markup.goldmark.renderer]
+    unsafe = false
 
 # Configurações do PaperMod
 [params]
@@ -110,3 +138,51 @@ theme = "PaperMod"
 # Permalinks
 [permalinks]
   posts = "/:title/"
+
+# Otimizações de Performance
+[build]
+  writeStats = true
+  
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+  
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.146.0"
+
+[security]
+  enableInlineShortcodes = false
+  [security.funcs]
+    getenv = ['^HUGO_']
+  [security.http]
+    methods = ['GET', 'POST']
+    urls = ['.*']
+
+[caches]
+  [caches.getjson]
+    maxAge = "10s"
+  [caches.getcsv]
+    maxAge = "10s"
+  [caches.images]
+    maxAge = "1h"
+  [caches.assets]
+    maxAge = "24h"
+
+[imaging]
+  quality = 75
+  resampleFilter = "Lanczos"
+  anchor = "Smart"
+  
+[server]
+  [[server.headers]]
+    for = "/**"
+    [server.headers.values]
+      Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' data: https:;"

@@ -1,0 +1,26 @@
+{{- $image := .image -}}
+{{- $alt := .alt -}}
+{{- $class := .class -}}
+{{- $sizes := .sizes | default "(min-width: 768px) 720px, 100vw" -}}
+
+{{- if $image -}}
+  {{- $tiny := ($image.Resize "20x webp q20").RelPermalink -}}
+  {{- $small := ($image.Resize "400x webp q70").RelPermalink -}}
+  {{- $medium := ($image.Resize "720x webp q75").RelPermalink -}}
+  {{- $large := ($image.Resize "1080x webp q80").RelPermalink -}}
+  
+  <figure class="{{ $class }}">
+    <img
+      src="{{ $tiny }}"
+      data-src="{{ $medium }}"
+      srcset="{{ $small }} 400w, {{ $medium }} 720w, {{ $large }} 1080w"
+      sizes="{{ $sizes }}"
+      alt="{{ $alt }}"
+      loading="lazy"
+      decoding="async"
+      class="lazyload blur-up">
+    <noscript>
+      <img src="{{ $medium }}" alt="{{ $alt }}">
+    </noscript>
+  </figure>
+{{- end -}}

@@ -23,4 +23,20 @@ git clone https://github.com/siegerts/hugo-theme-basic themes/basic
 
 - Change `theme` entry in `config.toml` to the theme name
 
-For more, checkout [official documentations](https://gohugo.io/documentation/).# sherlockramosblog
+For more, checkout [official documentations](https://gohugo.io/documentation/).
+
+## Build e Deploy
+
+Para gerar o site estático, execute:
+
+```sh
+hugo
+```
+
+Os arquivos gerados ficarão na pasta `public/`, que **não deve ser versionada** (veja `.gitignore`).
+
+Para deploy, envie o conteúdo da pasta `public/` para seu serviço de hospedagem (ex: GitHub Pages, Vercel, Netlify, etc).
+
+## Estrutura de Estilos Customizados
+
+Os estilos customizados do site estão em `assets/css/custom.css` e são importados via partial `extend_head.html`. Edite esse arquivo para personalizar o visual do blog.

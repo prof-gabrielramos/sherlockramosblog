@@ -1,0 +1,23 @@
+# Ignorar pasta de build do Hugo
+public/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários do Hugo
+resources/_gen/
+.hugo_build.lock
+
+# Arquivos de ambiente local
+.env
+.env.*
+
+# Arquivos de IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Arquivos de dependências
+node_modules/

@@ -1,5 +1,19 @@
+{{/* Estilos customizados */}}
+{{ with resources.Get "css/main.scss" }}
+  {{ $opts := dict "targetPath" "css/main.css" "outputStyle" "compressed" "enableSourceMap" (not hugo.IsProduction) }}
+  {{ $style := . | toCSS $opts | postCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+{{ end }}
 
-<!-- MathJax para renderização de LaTeX -->
+{{/* Scripts de performance */}}
+{{ with resources.Get "js/performance.js" }}
+  {{ $opts := dict "targetPath" "js/performance.min.js" "minify" true }}
+  {{ $js := . | js.Build $opts | fingerprint }}
+  <script defer src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ end }}
+
+{{/* MathJax para LaTeX */}}
+{{ if .Params.math }}
 <script>
   MathJax = {
     tex: {
@@ -13,91 +27,13 @@
     }
   };
 </script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+{{ end }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
 
-<!-- Estilos customizados inspirados no Twitter/X -->
-<style>
-:root {
-  --primary-color: #1da1f2;
-  --secondary-color: #14171a;
-  --accent-color: #657786;
-  --background-color: #ffffff;
-  --text-color: #14171a;
-  --border-color: #e1e8ed;
-}
+<!-- Preload de fontes críticas -->
+<link rel="preload" href="/fonts/Inter-var.woff2" as="font" type="font/woff2" crossorigin>
 
-[data-theme="dark"] {
-  --primary-color: #1da1f2;
-  --secondary-color: #ffffff;
-  --accent-color: #8899a6;
-  --background-color: #15202b;
-  --text-color: #ffffff;
-  --border-color: #38444d;
-}
-
-.main {
-  max-width: 680px;
-}
-
-.post-entry {
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 16px;
-  margin-bottom: 16px;
-  transition: all 0.2s ease;
-}
-
-.post-entry:hover {
-  border-color: var(--primary-color);
-  box-shadow: 0 2px 8px rgba(29, 161, 242, 0.1);
-}
-
-.post-title {
-  color: var(--text-color);
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-}
-
-.post-meta {
-  color: var(--accent-color);
-  font-size: 15px;
-}
-
-.social-icons a {
-  color: var(--accent-color);
-  transition: color 0.2s ease;
-}
-
-.social-icons a:hover {
-  color: var(--primary-color);
-}
-
-.profile-mode .profile_inner h1 {
-  font-weight: 800;
-  font-size: 32px;
-  color: var(--text-color);
-}
-
-.profile-mode .profile_inner .subtitle {
-  color: var(--accent-color);
-  font-size: 17px;
-}
-
-.profile-mode .buttons .button {
-  background-color: var(--primary-color);
-  color: white;
-  border-radius: 20px;
-  padding: 8px 16px;
-  font-weight: 700;
-  border: none;
-  transition: all 0.2s ease;
-}
-
-.profile-mode .buttons .button:hover {
-  background-color: #1991db;
-  transform: translateY(-1px);
-}
-</style>
+<!-- Preconnect para recursos externos -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
