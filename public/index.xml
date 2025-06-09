@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Sherlock Ramos Blog</title>
+    <link>http://0.0.0.0:5000/</link>
+    <description>Recent content on Sherlock Ramos Blog</description>
+    <generator>Hugo -- 0.126.1</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Mon, 01 Jan 2024 10:00:00 -0300</lastBuildDate>
+    <atom:link href="http://0.0.0.0:5000/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bem-vindos ao Meu Blog!</title>
+      <link>http://0.0.0.0:5000/bem-vindos-ao-meu-blog/</link>
+      <pubDate>Mon, 01 Jan 2024 10:00:00 -0300</pubDate>
+      <guid>http://0.0.0.0:5000/bem-vindos-ao-meu-blog/</guid>
+      <description>Primeiro post do blog - apresentação e objetivos</description>
+    </item>
+    <item>
+      <title>Contato</title>
+      <link>http://0.0.0.0:5000/contact/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://0.0.0.0:5000/contact/</guid>
+      <description>Entre em contato com Sherlock Ramos</description>
+    </item>
+    <item>
+      <title>Projetos</title>
+      <link>http://0.0.0.0:5000/projects/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://0.0.0.0:5000/projects/</guid>
+      <description>Confira os projetos desenvolvidos por Sherlock Ramos</description>
+    </item>
+    <item>
+      <title>Sobre Mim</title>
+      <link>http://0.0.0.0:5000/about/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://0.0.0.0:5000/about/</guid>
+      <description>Conheça mais sobre Sherlock Ramos</description>
+    </item>
+    <item>
+      <title>Hello</title>
+      <link>http://0.0.0.0:5000/hello/</link>
+      <pubDate>Wed, 01 Dec 2021 22:50:26 +0000</pubDate>
+      <guid>http://0.0.0.0:5000/hello/</guid>
+      <description>oh hi</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,111 @@
+baseURL = 'https://sherlockramos.blog'
+languageCode = 'pt-br'
+title = 'Sherlock Ramos Blog'
+theme = "PaperMod"
+
+# Configurações do PaperMod
+[params]
+  # Configurações básicas do site
+  env = "production"
+  title = "Sherlock Ramos"
+  description = "Blog pessoal de Sherlock Ramos - Tecnologia, Projetos e Reflexões"
+  keywords = ["blog", "tecnologia", "projetos", "sherlock ramos"]
+  author = "Sherlock Ramos"
+  
+  # Configurações visuais inspiradas no Twitter/X
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  
+  # Configurações de navegação
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = false
+  tocopen = false
+
+# Configurações do autor
+[params.profileMode]
+  enabled = true
+  title = "Sherlock Ramos"
+  subtitle = "Desenvolvedor, Escritor e Pensador"
+  imageUrl = "https://pbs.twimg.com/profile_images/1848910652808613888/r81-u5pP_400x400.jpg"
+  imageWidth = 120
+  imageHeight = 120
+  imageTitle = "Sherlock Ramos"
+
+# Botões do perfil
+[[params.profileMode.buttons]]
+  name = "Blog"
+  url = "/posts"
+
+[[params.profileMode.buttons]]
+  name = "Sobre"
+  url = "/about"
+
+[[params.profileMode.buttons]]
+  name = "Projetos"
+  url = "/projects"
+
+# Configurações de redes sociais
+[[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/GatoMaconhado_"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/sherlockramos"
+
+# Menu principal
+[[menu.main]]
+  identifier = "home"
+  name = "Início"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "about"
+  name = "Sobre"
+  url = "/about/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "projects"
+  name = "Projetos"
+  url = "/projects/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "posts"
+  name = "Blog"
+  url = "/posts/"
+  weight = 40
+
+[[menu.main]]
+  identifier = "contact"
+  name = "Contato"
+  url = "/contact/"
+  weight = 50
+
+# Configurações de markup para LaTeX
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+    codeFences = true
+
+# Permalinks
+[permalinks]
+  posts = "/:title/"
